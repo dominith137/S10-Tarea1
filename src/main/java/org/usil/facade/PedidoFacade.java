@@ -34,7 +34,6 @@ public class PedidoFacade {
     public Comprobante procesarPedido(Cliente cliente, Producto producto, int cantidad) {
         // 1. Validar stock
         if (!stockService.validarStock(producto, cantidad)) {
-            System.out.println("Error: No hay stock suficiente o la cantidad es inválida");
             return null;
         }
         
@@ -47,7 +46,6 @@ public class PedidoFacade {
         // 4. Registrar el pedido
         boolean registrado = pedidoService.registrarPedido(pedido);
         if (!registrado) {
-            System.out.println("Error: No se pudo registrar el pedido");
             return null;
         }
         
@@ -59,7 +57,7 @@ public class PedidoFacade {
         Comprobante comprobante = comprobanteService.generarComprobante(pedido);
         return comprobante;
     }
-    
+
     public void mostrarComprobante(Comprobante comprobante) {
         if (comprobante != null) {
             comprobanteService.mostrarComprobante(comprobante);

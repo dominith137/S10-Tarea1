@@ -15,9 +15,5 @@ public class LegacyBillingSystem {
         System.out.println("[Legacy System] Monto: " + montoTotal);
         return numeroFactura;
     }
-
-    public boolean estaDisponible() {
-        return true;
-    }
 }
 
