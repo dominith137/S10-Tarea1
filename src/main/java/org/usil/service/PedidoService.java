@@ -16,7 +16,7 @@ public class PedidoService {
 
         return true;
     }
-    
+
     public String generarNumeroPedido() {
         return "PED-" + String.format("%06d", contadorPedidos++);
     }
